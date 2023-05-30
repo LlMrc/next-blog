@@ -7,7 +7,7 @@ import {
   DownhillSkiing,
   DriveEta,
   Euro,
-  Home,
+ 
   Movie,
   TravelExplore,
   Vrpano,
@@ -25,7 +25,7 @@ export default function GroupMenu() {
           p: "14px",
           backgroundColor: "#27374D",
           color: "white",
-          borderRadius: 2,
+          borderRadius: {xs: 0, md:2},
           display: { md: "block", xs: "none" },
         }}
       >

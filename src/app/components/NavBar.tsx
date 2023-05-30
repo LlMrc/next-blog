@@ -89,7 +89,7 @@ function NavBar() {
   return (
     <Box>
   
-      <AppBar position="sticky" sx={{ top: 0, margin: 0 }} elevation={0}>
+      <AppBar position="fixed" sx={{ top: 0, margin: 0 }} elevation={0}>
         <StyledToolBar>
           <Stack direction={"row"} spacing={2}>
             <Link href="/" style={{ textDecoration: "none", color: "white" }}>

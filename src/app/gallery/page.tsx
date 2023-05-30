@@ -13,7 +13,7 @@ const MarketPlace = async () => {
   return (
     <BaseLayout>
 
-   <Container  sx={{background: 'purple', height:'100%', padding: '0 auto', marginLeft:'15px'}} >
+   <Container  sx={{ height:'100%', margin: '0 auto',  marginLeft:{sm: '0', md: '15px'}}} >
    <Typography
         variant="h4"
         p={4}

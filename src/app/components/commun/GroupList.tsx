@@ -1,8 +1,10 @@
 "use client";
 
 import styled from "@emotion/styled";
-import { Box, Paper, Stack, Typography } from "@mui/material";
+import { Category } from "@mui/icons-material";
+import { Box, IconButton, Paper, Stack, Typography } from "@mui/material";
 import React from "react";
+import BasicMenu from "../MbileMenuGroup";
 
 type Props = {
   img: string;
@@ -55,15 +57,19 @@ const GroupList = ({ img, headerTitle, subTitle }: Props) => {
         overflow: "hidden",
       }}
     >
+    
       <Box alignItems={"center"} sx={boxStyle}>
-        <Stack direction={"row"} spacing={2}>
+        <Stack direction={"row"} spacing={2} >
           <Typography variant="h4" fontWeight={900} letterSpacing={2}>
             {headerTitle}
           </Typography>
           <Typography variant="h4" fontWeight={900} style={{ color: "red" }}>
-            {" "}
+     
             Group
           </Typography>
+  
+         <BasicMenu/>
+      
         </Stack>
 
         <Typography variant="body2" letterSpacing={2}>

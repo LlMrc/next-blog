@@ -35,7 +35,7 @@ const Linkstyled = styled("div")({
     backgroundColor: "rgba(0, 0, 0, 0.12)", 
     boxShadow:
     "0 2px 2px 0 rgba(0, 0, 0, 0), 0 0 0 1px rgba(0, 0, 0, 0)",
-  color: "#000" },
+},
 });
 
 const Li_style = styled("li")({
@@ -81,7 +81,7 @@ const linkItems = [
 
   {
     name: "Sign up",
-    href: "/profil",
+    href: "/",
     icon: <AccountCircleOutlined />,
   },
 ];

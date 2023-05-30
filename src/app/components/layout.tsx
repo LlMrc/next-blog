@@ -27,7 +27,7 @@ export default function BaseLayout({ children }: Props) {
   return (
     <>
       <NavBar />
-      <StyleToolBar />
+    <StyleToolBar/>
       <Stack
         direction="row"
         sx={{
