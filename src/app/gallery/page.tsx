@@ -1,16 +1,43 @@
 "use client";
-import { Box } from "@mui/material";
+import { Box, CardMedia, Container, Grid, ImageList, ImageListItem, Paper, Typography } from "@mui/material";
 import React from "react";
-import RightBar from "../components/RightBar";
+
+import getAllPhoto from "@/lib/getPhoto";
 import BaseLayout from "../components/layout";
 
-const MarketPlace = () => {
+const MarketPlace = async () => {
+  const photoData: Promise<Photo[]> = getAllPhoto();
+  const data = await photoData;
+ 
+
   return (
-    <>
-      <BaseLayout>
-        <div>MArket place</div>
-      </BaseLayout>
-    </>
+    <BaseLayout>
+
+   <Container  sx={{background: 'purple', height:'100%', padding: '0 auto', marginLeft:'15px'}} >
+   <Typography
+        variant="h4"
+        p={4}
+        textAlign={'center'}
+        textTransform={"uppercase"}
+        fontWeight={"bold"} >
+        MY GALLERY
+      </Typography>
+      <ImageList variant="masonry" cols={3} gap={8}>
+  {data.map((item) => (
+    <ImageListItem key={item.id}>
+    
+      <img
+        src={`${item.url}?w=248&fit=crop&auto=format`}
+        srcSet={`${item.thumbnailUrl}?w=248&fit=crop&auto=format&dpr=2 2x`}
+        alt={item.title}
+        loading="lazy"
+      />
+    </ImageListItem>
+  ))}
+</ImageList>
+   </Container>
+
+    </BaseLayout>
   );
 };
 

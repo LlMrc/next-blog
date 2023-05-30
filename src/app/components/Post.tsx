@@ -11,13 +11,12 @@ export type Props = {
     img: string
 };
 
-const CardMediaProps = styled(CardMedia)({
 
-})
 
 const Post: React.FC<Props>= ({img}) => {
   return (
-    <Card sx={{m:6, background: "#F0F0F0"}} >
+    <Card sx={{m:{xs: 0, sm:4, md: 6},
+     background: "#F0F0F0" }} >
     <CardHeader
     avatar={
       <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
@@ -35,6 +34,7 @@ const Post: React.FC<Props>= ({img}) => {
     />
 
     <CardMedia
+    
     component="img" 
      height="10%"
     image={img}
@@ -43,6 +43,7 @@ const Post: React.FC<Props>= ({img}) => {
     
     transition: " 1s  ease-in-out",
       "&:hover":{transform: "scale(1.01)"}}}
+      
     
   />
     <CardContent>

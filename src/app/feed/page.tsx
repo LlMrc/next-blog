@@ -16,6 +16,7 @@ const feed: FC<FeedProps> = () => {
           <Feed />
         </Box>
       </BaseLayout>
+    
     </>
   );
 };

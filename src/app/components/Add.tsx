@@ -15,11 +15,8 @@ import {
 import {
   AddAPhoto,
   Add as AddIcon,
-  BrowseGallery,
-  Camera,
   DateRangeOutlined,
   EmojiEmotions,
-
   PersonAdd,
   VideoCameraBack,
 } from "@mui/icons-material";
@@ -46,10 +43,20 @@ export const Add = () => {
         title="Add Post"
         sx={{ position: "fixed", bottom: 20, left: { xs: "70%", md: 20 } }}
       >
-        <IconButton>
-          <Fab color="secondary" variant="extended" aria-label="add">
-            <AddIcon sx={{ mr: 1 }} onClick={(e) => setOpen(true)} />
+        <IconButton  onClick={(e) => setOpen(true)}>
+          <Fab
+          sx={{display: {xs:'none', sm:'block'}}}
+           
+            color="secondary"
+            variant="extended"
+            aria-label="add"
+          >
+            <AddIcon sx={{ mr: 1 }} />
             Add Post
+          </Fab>
+
+          <Fab color="secondary" aria-label="edit" sx={{display: {xs:'block', sm:'none'}}}>
+            <AddIcon />
           </Fab>
         </IconButton>
       </Tooltip>
@@ -60,13 +67,12 @@ export const Add = () => {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box
-          width={400}
-          height={280}
-          borderRadius={5}
-          bgcolor={"background.default"}
-          color={"text.primary"}
-          p={2}
+        <Box sx={{ width:  {lg:'30%',md:'40%' ,sm: '50', xs: '60%'},
+          borderRadius: 5,
+          bgcolor: "background.default",
+          color: "text.primary",
+          p: 2}}
+      
         >
           <Typography
             id="modal-modal-title"

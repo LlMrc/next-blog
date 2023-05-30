@@ -1,5 +1,5 @@
 async function getPost(userId: string) {
-    const res = await fetch(`https://jsonplaceholder.typicode.com/posts?userId=${userId}`)
+    const res = await fetch(`https://jsonplaceholder.typicode.com/posts?userId=${1}`)
     if(!res.ok) throw new Error('faild to fatch data')
 
     const data = res.json()
@@ -8,3 +8,5 @@ async function getPost(userId: string) {
 }
 
 export default getPost
+
+

@@ -1,42 +1,46 @@
  'use client'
-import React from 'react'
-import getUser from '@/lib/getUser'
-import getPost from '@/lib/getUserPost'
+import React, { FC, Suspense } from 'react'
+
+
 import { Typography } from '@mui/material'
-import UserPost from '@/app/components/UserPost'
-import { Suspense } from 'react'
-import { Metadata } from 'next'
+import fetchPost from '@/lib/getUser'
+import getUser from '@/lib/getUser'
+import PostModal from '@/app/components/PostModal'
+import getPost from '@/lib/getUserPost'
 
-type Params = {
+
+
+
+interface PageProps{
     params: {
-        userId: string}
-}
-
-export async function generateMedatada({params: {userId}}: Params): Promise<Metadata>{
-    const userData: Promise<User> = getUser(userId)
-    const user = await userData
-    return {
-        title: user.name
+        userId: string
     }
 }
 
-export default async function User({params: {userId}}: Params) {
-  
-    const userData: Promise<User> = getUser(userId)
-    const postData: Promise<Post[]> = getPost(userId)
 
-      const user = await userData
 
-      
+const   user =   async({params :{userId}}: PageProps) =>{
+ 
+ const data: Promise<User> = getUser(userId)
+ const postData: Promise<Post[]> = getPost(userId)
+ 
+          const currentPost = await data
+ 
+    
     return (
      <>
-      <Typography variant='h4'>{user.name}</Typography> 
-     <Suspense fallback={<h2>Loading...</h2>}>
-        {/* @ts-expect-error Async Server Component */}
-     <UserPost promise={postData}/>
-     </Suspense>
+      <Typography variant='h4' fontWeight={'bold'} p={2}>{currentPost.name}</Typography> 
+      {/* @ts-expect-error Async Server Component */}
+      <Suspense fallback={<h2>loading...</h2>}> <PostModal promise={postData}/></Suspense>
+  
+       
            
        
      </>
     )
 }
+
+export default user
+
+
+

@@ -1,49 +1,58 @@
+"use client"
 
-
-
-// import { Dispatch, SetStateAction, useState } from "react";
+import { Box, Stack,  styled } from "@mui/material";
 import SideBar from "./SideBar";
-import { Box, PaletteMode, Switch, Typography, createTheme } from "@mui/material";
-import styled from "@emotion/styled";
-import { PropertyAssignment } from "typescript";
+import NavBar from "./NavBar";
+
 
 interface Props {
   children: React.ReactNode;
-
 }
 
-const Layout = styled("div")({
-  display: "flex",
-  position: "relative",
-  height: "100vh",
-  gap: "2rem",
-  border: " 1px",
-});
+const StyleToolBar = styled("div")(({ theme }) => ({
+  ...theme.mixins.toolbar,
+}));
 
-const SwitchStyle = styled('div')({
 
-})
 
-export default function BaseLayout({children}: Props) {
+export default function BaseLayout({ children }: Props) {
+  // const [mode, setMode] = useState<PaletteMode>("light")
 
-    // const [mode, setMode] = useState<PaletteMode>("light")
-
-    // const darkTheme = createTheme({
-    //     palette: {
-    //       mode: mode 
-    //      }
-    //   });
-    
+  // const darkTheme = createTheme({
+  //     palette: {
+  //       mode: mode
+  //      }
+  //   });
+ 
   return (
     <>
-      <Layout>
-     
-        <SideBar/>
-    
+      <NavBar />
+      <StyleToolBar />
+      <Stack
+        direction="row"
+        sx={{
+          height: "100vh",
+          width: "100%",
+        }}
+      >
+        <Box
+          sx={{
+            display: {
+              xs: "none",
+              md: "block",
+            },
+          }}
+          height="100vh"
+          width={275}
+        >
+        
+          <SideBar />
+          
+        </Box>
+        
 
-         {children}
-      </Layout>
-     
+        <Box flex={1}>{children} </Box>
+      </Stack>
     </>
   );
 }

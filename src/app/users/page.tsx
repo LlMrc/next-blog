@@ -64,7 +64,7 @@ const UsersPAge = async () => {
 
                 <CardContent>
                   <Typography variant="subtitle1" color="text.secondary">
-                    {item.phone}{" "}
+                    {item.phone}
                   </Typography>
                   <Typography variant="body1" color="text.secondary">
                     {item.website}
@@ -74,7 +74,7 @@ const UsersPAge = async () => {
                   <Button size="small" color="error">
                     Follow
                   </Button>
-                  <Button variant="contained"> <Link href={`/users/${item.id}`} style={{textDecoration: "none", color: 'white'}}>Post</Link></Button>
+                  <Button variant="contained"> <Link href={`/users/${item.id}`} style={{textDecoration: "none", color: 'white'}}>Open</Link></Button>
                 </CardActions>
               </Card>
             </Grid>

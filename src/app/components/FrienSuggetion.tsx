@@ -11,7 +11,9 @@ const FrienSuggetion = ({image , name}: Props) => {
     <Card sx={{ display: 'flex', 
     gap: 2, m:2, 
     maxHeight: 120, 
+ 
      transition: " .5s  ease-in-out", 
+   
      "&:hover":{ transform: "scale(1.02)", background: "#ECC9EE"}}}>
          <CardMedia
         component="img"

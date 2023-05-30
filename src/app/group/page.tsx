@@ -1,35 +1,17 @@
-"use client";
+import React from 'react'
+import GroupLayout from '../components/commun/layout'
+import GroupList from '../components/commun/GroupList'
+import NavBar from '../components/NavBar'
 
-import {styled} from "@mui/system";
-import { Box, Paper, Stack } from "@mui/material";
-
-
-
-const MyThemeComponent = styled('div')(({ theme }) => ({
-  color: theme.palette.primary.contrastText,
-  backgroundColor: theme.palette.primary.main,
-  padding: theme.spacing(1),
-  borderRadius: theme.shape.borderRadius,
-}));
-
-export default function Group(){
-
+export default function GroupPage() {
   return (
-    <>
-    <Stack direction='row'>
-      <Box sx={{width: "200px", height: "100vh", m:"auto", backgroundColor: "#27374D"}}>
-        <Paper>iteme1</Paper>
-        <Paper>iteme2</Paper>
-        <Paper>iteme3</Paper>
-      </Box>
-      <Box sx={{m:"auto"}} flex={1}>
-        <Paper>iteme1</Paper>
-        <Paper>iteme2</Paper>
-        <Paper>iteme3</Paper>
-      </Box>
-    </Stack>
+    <> 
+ 
+    <GroupLayout>
+      
+      <GroupList img="https://images.pexels.com/photos/1000445/pexels-photo-1000445.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" headerTitle="All" subTitle={'The secret of getting ahead is getting started'}/>
+    </GroupLayout>
     </>
-  );
-};
 
-
+  )
+}
