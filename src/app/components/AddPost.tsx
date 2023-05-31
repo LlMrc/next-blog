@@ -1,4 +1,11 @@
-"use client";
+import {
+  Add,
+  AddAPhoto,
+  DateRangeOutlined,
+  EmojiEmotions,
+  PersonAdd,
+  VideoCameraBack,
+} from "@mui/icons-material";
 import {
   Avatar,
   Box,
@@ -9,70 +16,56 @@ import {
   Modal,
   Stack,
   TextField,
-  Tooltip,
   Typography,
 } from "@mui/material";
-import {
-  AddAPhoto,
-  Add as AddIcon,
-  DateRangeOutlined,
-  EmojiEmotions,
-  PersonAdd,
-  VideoCameraBack,
-} from "@mui/icons-material";
+import Tooltip from "@mui/material/Tooltip";
 import React, { useState } from "react";
-import styled from "@emotion/styled";
 
-const StyledModal = styled(Modal)({
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-});
-
-const UserBox = styled(Box)({
-  display: "flex",
-  alignItems: "center",
-  gap: "10px",
-});
-
-export const Add = () => {
+const AddPost = () => {
   const [open, setOpen] = useState(false);
   return (
     <>
       <Tooltip
-        title="Add Post"
-        sx={{ position: "fixed", bottom: 20, left: { xs: "70%", md: 20 } }}
+        title="Add new Note"
+        sx={{ position: "fixed", bottom: 20, left: { xs: "70%", md: "10%" } }}
       >
-        <IconButton  onClick={(e) => setOpen(true)}>
+        <Box>
           <Fab
-          sx={{display: {xs:'none', sm:'block'}}}
-           
+            onClick={(e) => setOpen(true)}
             color="secondary"
             variant="extended"
-            aria-label="add"
+            sx={{ display: { xs: "none", sm: "block" } }}
           >
-            <AddIcon sx={{ mr: 1 }} />
-            Add Post
+            <Add sx={{ mr: 1 }} />
+            New Post
           </Fab>
 
-          <Fab color="secondary" aria-label="edit" sx={{display: {xs:'block', sm:'none'}}}>
-            <AddIcon />
+          <Fab
+            onClick={(e) => setOpen(true)}
+            color="secondary"
+            aria-label="edit"
+            sx={{ display: { xs: "block", sm: "none" } }}
+          >
+            <Add />
           </Fab>
-        </IconButton>
+        </Box>
       </Tooltip>
 
-      <StyledModal
+      <Modal
         open={open}
         onClose={(e) => setOpen(false)}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
+        sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}
       >
-        <Box sx={{ width:  {lg:'30%',md:'40%' ,sm: '50', xs: '60%'},
-          borderRadius: 5,
-          bgcolor: "background.default",
-          color: "text.primary",
-          p: 2}}
-      
+        <Box
+          sx={{
+            width: { lg: "30%", md: "40%", sm: "50", xs: "60%" },
+            borderRadius: 5,
+            bgcolor: "background.default",
+            color: "text.primary",
+            p: 2,
+          }}
         >
           <Typography
             id="modal-modal-title"
@@ -84,17 +77,17 @@ export const Add = () => {
             Create post
           </Typography>
 
-          <UserBox>
+          <Box sx={{ display: "flex", alignItems: "center", gap: "10px" }}>
             <Avatar src="" alt="profile" />
-            <Typography>Loe Mrc</Typography>
-          </UserBox>
+            <Typography>Marc Loe</Typography>
+          </Box>
 
           <TextField
             variant="standard"
             rows={3}
             multiline
             sx={{ width: "100%" }}
-            placeholder="What's in your mine"
+            placeholder="What's in your mind"
           />
 
           <Stack direction="row" gap={1} mt={1} mb={3}>
@@ -115,9 +108,9 @@ export const Add = () => {
             </Button>
           </ButtonGroup>
         </Box>
-      </StyledModal>
+      </Modal>
     </>
   );
 };
 
-export default Add;
+export default AddPost;

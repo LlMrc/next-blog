@@ -5,7 +5,7 @@ import React from 'react'
 import {Avatar, Box, Card, CardActions, CardContent, CardHeader, CardMedia, Checkbox, IconButton, IconButtonProps, Typography} from '@mui/material'
 import { red } from '@mui/material/colors'
 import {  Favorite, FavoriteBorder, MoreVert, Scale, Share } from '@mui/icons-material'
-import styled from '@emotion/styled'
+
 
 export type Props = {
     img: string

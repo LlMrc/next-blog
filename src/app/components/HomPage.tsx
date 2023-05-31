@@ -4,7 +4,8 @@
 import React from "react";
 import { Box, styled } from "@mui/material";
 import Post from "./Post";
-import Add from "./Add";
+
+import AddPost from "./AddPost";
 
 
 const StyleMargin = styled("div")(({ theme }) => ({
@@ -27,7 +28,9 @@ const HomePage = () => {
         <Post img="https://images.pexels.com/photos/8101834/pexels-photo-8101834.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
         <Post img="https://www.pexels.com/video/red-leaves-in-autumn-1777892/" />
       </Box>
-      <Add />
+    
+      <AddPost />
+      
       </StyleMargin>
     </>
   );

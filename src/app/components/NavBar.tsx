@@ -123,13 +123,13 @@ function NavBar() {
               <Notifications />
             </Badge>
             <Avatar
-              onClick={(e) => setOpen(true)}
+              onClick={() => setOpen(true)}
               alt="Louis Marc"
               sx={{ width: 30, height: 30 }}
               src="https://media.licdn.com/dms/image/C4E03AQE3sHdhl_gFbA/profile-displayphoto-shrink_800_800/0/1569078145649?e=2147483647&v=beta&t=h3OA1jGhRaPmsHSMa2INoFolQ602Z6tOmy2rtjDrowA"
             />
           </Icon>
-          <UseAvatar onClick={(e) => setOpen(true)}>
+          <UseAvatar onClick={() => setOpen(true)}>
             <Avatar
               alt="Louis Marc"
               sx={{ width: 30, height: 30 }}
