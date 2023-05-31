@@ -19,9 +19,7 @@ import {
 import NavBar from "../components/NavBar";
 import FrienSuggetion from "../components/FrienSuggetion";
 
-export const metadata: Metadata = {
-  title: "Users",
-};
+
 
 const UsersPAge = async () => {
   const userData: Promise<User[]> = getAllUsers();
