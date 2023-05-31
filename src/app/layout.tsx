@@ -1,13 +1,6 @@
 
 
-"use client"
-
-import { BorderStyleOutlined } from '@mui/icons-material';
-import { GlobalStyles, styled } from '@mui/material';
 import { Inter } from 'next/font/google'
-
-
-
 
 
 const inter = Inter({ subsets: ['latin'] })
